@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.mapbox.mapboxsdk.views.MapView
+    <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        mapbox:access_token="@string/mapBoxToken"/>
+        mapbox:access_token="pk.eyJ1IjoibWF0cml4ODgiLCJhIjoidlpMLWxYTSJ9.88Pa5Jg5-GDtqwyI2I7QXQ"/>
     <!-- note the access token string created in the previous step -->
 </RelativeLayout>

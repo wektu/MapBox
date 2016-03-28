@@ -34,18 +34,27 @@ public class MapBoxActivity extends AppCompatActivity
             @Override
             public void onMapReady(@NonNull MapboxMap mapboxMap) {
 
-                // Set map style
-                mapboxMap.setStyleUrl(Style.MAPBOX_STREETS);
+                mMap = mapboxMap;
+
+
+
+                // restore map to previous location and zoom level, if any, or to default values
+                float zoomLevel = 2.0f;
+                double lat = 44.427528;
+                double lng = 26.087354;
 
                 // Set the camera's starting position
                 CameraPosition cameraPosition = new CameraPosition.Builder()
-                        .target(new LatLng(41.885, -87.679)) // set the camera's center position
-                        .zoom(12)  // set the camera's zoom level
+                        .target(new LatLng(lat, lng)) // set the camera's center position
+                        .zoom(zoomLevel)  // set the camera's zoom level
                         .tilt(20)  // set the camera's tilt
                         .build();
 
                 // Move the camera to that position
                 mapboxMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+                // Set map style
+                mapboxMap.setStyleUrl(Style.DARK);
             }
 
         });
@@ -104,7 +113,6 @@ public class MapBoxActivity extends AppCompatActivity
 
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
-
         mMap = mapboxMap;
 
 
@@ -126,5 +134,6 @@ public class MapBoxActivity extends AppCompatActivity
 
         // Set map style
         mapboxMap.setStyleUrl(Style.DARK);
+
     }
 }
